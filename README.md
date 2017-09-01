@@ -18,6 +18,8 @@ This library utilizes the HTML5 "onhashchange" event, but also includes a fall b
 
 [http://nuget.org/packages/jhash](http://nuget.org/packages/jhash)
 
+![](images/NuGet-Package.png)
+
 ## Sample Code
 
 ```
@@ -73,4 +75,5 @@ jHash.clearQuery();
 ## Articles / News
 
 2012-05-01 - [jHash v2.0 Released: Now with Routing Support!](http://pietschsoft.com/post/2012/05/01/jHash-v20-Released-Now-with-Routing-Support!.aspx)
+
 2010-11-26 - [jHash: Easily Manage Browser History / window.location.hash](http://pietschsoft.com/post/2010/11/26/jHash-Easily-Manage-Browser-History-windowlocationhash.aspx)
