@@ -3,6 +3,8 @@ jHash allows you to work with 'location.hash' value in a similar fashion to a se
 
 This library utilizes the HTML5 "onhashchange" event, but also includes a fall back to still allow the change notifications to work properly in older web browsers.
 
+[View Documentation Here](wiki)
+
 ## Key Advantages of jHash
 
 - Free, open source (MIT icense)
