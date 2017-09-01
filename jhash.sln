@@ -1,0 +1,78 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "jhash", "jhash", "{0AC76EFF-67E3-48D2-A5A2-956481675D42}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "SAK"
+		SccAuxPath = "SAK"
+		SccLocalPath = "SAK"
+		SccProvider = "SAK"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/jhash"
+		Debug.AspNetCompiler.PhysicalPath = "jhash\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\jhash\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/jhash"
+		Release.AspNetCompiler.PhysicalPath = "jhash\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\jhash\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "24366"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuget", "Nuget", "{10002F78-CFA8-4798-8619-302683D821A2}"
+	ProjectSection(SolutionItems) = preProject
+		Nuget\jHash.2.00.nupkg = Nuget\jHash.2.00.nupkg
+		Nuget\jHash.2.1.nupkg = Nuget\jHash.2.1.nupkg
+		Nuget\NuGet.exe = Nuget\NuGet.exe
+		Nuget\Package.bat = Nuget\Package.bat
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Content", "Content", "{37CF4F66-3C9B-4F5F-846D-6B3548427D1B}"
+	ProjectSection(SolutionItems) = preProject
+		Nuget\Content\jHash.nuspec = Nuget\Content\jHash.nuspec
+		Nuget\Package.bat = Nuget\Package.bat
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{93C47F08-7993-4746-B66C-FABD335BF96F}"
+	ProjectSection(SolutionItems) = preProject
+		Nuget\Content\Content\Scripts\jhash-2.1.js = Nuget\Content\Content\Scripts\jhash-2.1.js
+		Nuget\Content\Content\Scripts\jhash-2.1.min.js = Nuget\Content\Content\Scripts\jhash-2.1.min.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Content", "Content", "{72E50F15-FB8A-42A6-B396-97E544FF3BFE}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs06
+		SccLocalPath0 = .
+		SccWebProject1 = true
+		SccProjectUniqueName1 = jhash
+		SccProjectName1 = jhash
+		SccLocalPath1 = jhash
+		SccProjectEnlistmentChoice1 = 2
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0AC76EFF-67E3-48D2-A5A2-956481675D42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AC76EFF-67E3-48D2-A5A2-956481675D42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{37CF4F66-3C9B-4F5F-846D-6B3548427D1B} = {10002F78-CFA8-4798-8619-302683D821A2}
+		{72E50F15-FB8A-42A6-B396-97E544FF3BFE} = {37CF4F66-3C9B-4F5F-846D-6B3548427D1B}
+		{93C47F08-7993-4746-B66C-FABD335BF96F} = {72E50F15-FB8A-42A6-B396-97E544FF3BFE}
+	EndGlobalSection
+EndGlobal

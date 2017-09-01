@@ -1,0 +1,1 @@
+Nuget Pack Content/JHash.nuspec

@@ -1,0 +1,105 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset=utf-8 />
+    <title>jHash v2.0 - Route Example</title>
+    <script src="jhash.js"></script>
+</head>
+<body>
+    <h1>jHash v2.0 - Route Example</h1>
+
+    <div id="divList">
+        <h3>Items</h3>
+        <ul>
+            <li><a href="#Item/1">Item 1</a></li>
+            <li><a href="#Item/2">Item 2</a></li>
+            <li><a href="#Item/3">Item 3</a></li>
+            <li><a href="#Item/4">Item 4</a></li>
+        </ul>
+
+        <h3>Search</h3>
+        <input type='text' id='txtSearch' /><button onclick='GoSearch();'>Go</button>
+    </div>
+
+    <div id="divItem">
+        <a href="#List">&lt;&lt; Back to List</a>
+
+        <h3>Item - <span id="divItem_id"></span></h3>
+    </div>
+
+    <div id="divSearch">
+        <a href="#List">&lt;&lt; Back to List</a>
+
+        <h3>Search</h3>
+        <p>No results for <span id="divSearch_value"></span></p>
+    </div>
+
+    <script>
+        // ***************************
+        // **** Declare Routes ****
+        // ***************************
+
+        // #List
+        jHash.route("List", function () {
+            showList();
+        });
+        
+        // #Item/1
+        jHash.route("Item/{id}", function () {
+            showItem(this.id);
+        });
+        
+        // #Search?q=value
+        jHash.route("Search", function () {
+            showSearch(jHash.val('q'));
+        });
+
+        // Set "Default" Route
+        // This route will be displayed if no root hash is specified
+        jHash.defaultRoute("List");
+        // Could also specify a specific Item:
+        //jHash.defaultRoute("Item/4");
+
+        // ***************************
+        // **** Startup Actions ****
+        // ***************************
+        // Process the "route" on initial page load
+        // Allows for routes to be deep linked into
+        // Can also force the current route to be re-processed
+        jHash.processRoute();
+        
+
+        // ***************************
+        // **** Utility functions ****
+        // ***************************
+        function showItem(id) {
+            document.getElementById("divItem").removeAttribute('style');
+            document.getElementById("divList").setAttribute('style', 'display: none');
+            document.getElementById("divSearch").setAttribute('style', 'display: none');
+
+            document.getElementById("divItem_id").innerHTML = id;
+        }
+
+        function showList() {
+            document.getElementById("divItem").setAttribute('style', 'display: none');
+            document.getElementById("divSearch").setAttribute('style', 'display: none');
+            document.getElementById("divList").removeAttribute('style');
+        }
+
+        function showSearch(q) {
+            document.getElementById("divItem").setAttribute('style', 'display: none');
+            document.getElementById("divList").setAttribute('style', 'display: none');
+            document.getElementById("divSearch").removeAttribute('style');
+
+            document.getElementById("divSearch_value").innerHTML = q;
+        }
+
+        function GoSearch() {
+            var queryVal = document.getElementById('txtSearch').value;
+
+            jHash.set("Search", { q: queryVal });
+        }
+    </script>
+
+</body>
+</html>

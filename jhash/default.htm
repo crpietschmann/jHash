@@ -1,0 +1,106 @@
+﻿<!doctype html>
+<html lang=en>
+<head>
+    <meta charset=utf-8 />
+
+    <title>jHash</title>
+    <script src="jhash.js"></script>
+
+    <style>
+        .box 
+        {
+            border: solid 1px black;
+            float: left;
+            padding: 3px;
+            margin-right: 4px;
+            margin-top: 4px;
+        }
+        .clear { clear: both; }
+    </style>
+</head>
+<body>
+    <h1>jHash v<script>document.write(jHash.jhash);</script></h1>
+
+    <p>jHash allows you to work with the 'location.hash' value in a similar fashion to a server-side query string.</p>
+    <p>More Information: <a href="http://jhash.codeplex.com">http://jhash.codeplex.com</a></p>
+
+    <div class="box">
+        Hash Root: <input id="txtNewHashRoot" type="text" value="TagId" /><br />
+        Hash Values: <input id="txtNewHashValues" type="text" value="Page=5&Name=Chris" /><br />
+        <input type="button" onclick="setHashFromFields(getElementValue('txtNewHashRoot'), getElementValue('txtNewHashValues'));" value="Set Hash" />
+    </div>
+
+    <div class="box">
+        Key: <input id="txtHashKey" type="text" value="Age" /><br />
+        Value: <input id="txtHashValue" type="text" value="29" /><br />
+        <input type="button" onclick="addKeyValuePair(getElementValue('txtHashKey'), getElementValue('txtHashValue'));" value="Set Key/Value" />
+    </div>
+
+    <div class="box">
+        Key: <input id="txtHashKeyRemove" type="text" value="Name" /><br />
+        <input type="button" onclick="jHash.remove(getElementValue('txtHashKeyRemove'));" value="Remove Value" />
+    </div>
+
+    <div class="box">
+        Key: <input id="txtHashKeyToDisplay" type="text" value="Name" /><br />
+        <input type="button" onclick="alert('value: ' + jHash.val(getElementValue('txtHashKeyToDisplay')));" value="Alert Value" />
+    </div>
+
+     <div class="box">
+        <input type="button" onclick="jHash.val({foo: 'bla1', bar: 'bla2', baz: 'bla3'});" value="Set Key/Value Object" />
+    </div>
+
+    <br class="clear"/>
+    <br />
+
+    <input type="button" value="Alert Root" onclick="alert('root: ' + jHash.root());" />
+    &nbsp;&nbsp;
+    <input type="button" value="Clear Root" onclick="jHash.clearRoot();" />
+    &nbsp;&nbsp;
+    <input type="button" value="Clear Query" onclick="jHash.clearQuery();" />
+    &nbsp;&nbsp;
+    <input type="button" value="Clear Root and Query" onclick="jHash.clear();" />
+
+    <br />
+    
+    <h2>Currently Set Hash</h2>
+    <strong>Root:</strong><input id="txtNewRoot" type="text" /><br />
+    <strong>Values:</strong><br />
+    <textarea id="txtNewValues" cols="35" rows="15"></textarea>
+
+    <br />
+    <hr />
+    Copyright &copy; 2013 Chris Pietschmann
+    
+
+    <script>
+        function setHashFromFields(root, values) {
+            jHash.set(root, values);
+        }
+
+        function addKeyValuePair(key, value) {
+            jHash.val(key, value);
+        }
+
+        function setElementValue(id, value) {
+            document.getElementById(id).value = value;
+        }
+        function getElementValue(id) {
+            return document.getElementById(id).value;
+        }
+
+        jHash.change(function () {
+            var newHashRoot = jHash.root();
+            setElementValue('txtNewRoot', newHashRoot);
+
+            var txt = document.getElementById('txtNewValues');
+            txt.value = "";
+            // Display new values
+            var values = jHash.val();
+            for (var i in values) {
+                txt.value += "" + i + ": " + values[i] + "\n";
+            }
+        });
+    </script>
+</body>
+</html>
