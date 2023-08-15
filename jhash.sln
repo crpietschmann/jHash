@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "jhash", "jhash", "{0AC76EFF-67E3-48D2-A5A2-956481675D42}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33424.131
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "jhash", "jhash\", "{0AC76EFF-67E3-48D2-A5A2-956481675D42}"
 	ProjectSection(WebsiteProperties) = preProject
 		SccProjectName = "SAK"
 		SccAuxPath = "SAK"
 		SccLocalPath = "SAK"
 		SccProvider = "SAK"
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
 		Debug.AspNetCompiler.VirtualPath = "/jhash"
 		Debug.AspNetCompiler.PhysicalPath = "jhash\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\jhash\"
@@ -49,17 +51,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Content", "Content", "{72E50F15-FB8A-42A6-B396-97E544FF3BFE}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 2
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs06
-		SccLocalPath0 = .
-		SccWebProject1 = true
-		SccProjectUniqueName1 = jhash
-		SccProjectName1 = jhash
-		SccLocalPath1 = jhash
-		SccProjectEnlistmentChoice1 = 2
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 	EndGlobalSection
@@ -72,7 +63,7 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{37CF4F66-3C9B-4F5F-846D-6B3548427D1B} = {10002F78-CFA8-4798-8619-302683D821A2}
-		{72E50F15-FB8A-42A6-B396-97E544FF3BFE} = {37CF4F66-3C9B-4F5F-846D-6B3548427D1B}
 		{93C47F08-7993-4746-B66C-FABD335BF96F} = {72E50F15-FB8A-42A6-B396-97E544FF3BFE}
+		{72E50F15-FB8A-42A6-B396-97E544FF3BFE} = {37CF4F66-3C9B-4F5F-846D-6B3548427D1B}
 	EndGlobalSection
 EndGlobal

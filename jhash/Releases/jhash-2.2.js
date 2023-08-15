@@ -1,8 +1,7 @@
 ﻿/*
-* jHash v2.1
-* http://jhash.codeplex.com
-* 
-* Copyright (c) 2013 Chris Pietschmann
+* jHash v2.2
+* https://github.com/crpietschmann/jHash
+* Copyright (c) 2013-2023 Chris Pietschmann
 * 
 * Permission is hereby granted, free of charge, to any person obtaining a copy of 
 * this software and associated documentation files (the "Software"), to deal in the 
@@ -25,7 +24,7 @@
     var ie_documentMode = window.document.documentMode;
     var hashChangeSupported = ('onhashchange' in window) && (ie_documentMode === undefined || ie_documentMode > 7);
     var jHash = window.jHash = {
-        jhash: "2.1",
+        jhash: "2.2",
 
         /// adds an event handler for the "hashchange" event
         change: function (handler) {
@@ -91,7 +90,8 @@
         /// removes a value from the hash querystring
         remove: function (name) {
             var ho = jHash.query();
-            ho[name.toLowerCase()] = undefined;
+            //ho[name.toLowerCase()] = undefined;
+            delete ho[name.toLowerCase()];
             return this.set(this.root(), ho);
         },
 
@@ -194,7 +194,6 @@
         hashToObject = function (hash) {
             /* create a "dictionary" object for the passed in hash value */
             var obj = {},
-                pair = null,
                 strHash = hash.substring(0, hash.length);
             if (hash !== null && hash !== undefined) {
                 if (strHash.indexOf("#") === 0) {
@@ -202,30 +201,18 @@
                 }
 
                 var queryIndex = strHash.indexOf("?");
-                
+
                 if (queryIndex > -1) {
                     strHash = strHash.substring(queryIndex + 1, strHash.length);
-
-                    var parts = strHash.split("&");
-                    for (var i in parts) {
-                        pair = parts[i].split("=");
-                        obj[pair[0].toString().toLowerCase()] = pair[1];
-                    }
+                    (new URLSearchParams(strHash)).forEach(function(v, k){
+                        obj[k.toLowerCase()] = v;
+                    });
                 }
             }
             return obj;
         },
         objectToHash = function (object) {
-            var s = "";
-            for (var i in object) {
-                if (object[i] !== undefined) {
-                    if (s.length > 0) {
-                        s += "&";
-                    }
-                    s += i.toString() + "=" + object[i].toString();
-                }
-            }
-            return s;
+            return (new URLSearchParams(object)).toString();
         },
         parseHashRoot = function (hash) {
             var strHash = hash.substring(0, hash.length);

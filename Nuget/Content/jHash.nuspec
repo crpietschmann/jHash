@@ -1,17 +1,17 @@
-<?xml version="1.0"?>
-<package >
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>jHash</id>
     <title>jHash</title>
-    <version>2.1</version>
+    <version>2.2</version>
     <authors>Chris Pietschmann</authors>
     <owners>Chris Pietschmann</owners>
-    <licenseUrl>http://jhash.codeplex.com/license</licenseUrl>
-    <projectUrl>http://jhash.codeplex.com</projectUrl>
+    <licenseUrl>https://github.com/crpietschmann/jHash/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/crpietschmann/jHash</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Allows you to work with 'location.hash' value in a similar fashion to a server-side query string. It also supports cross-browser "hashchange" event handling and a hash-based Routing engine.</description>
-    <releaseNotes>http://jhash.codeplex.com/releases</releaseNotes>
-    <copyright>Copyright (c) 2013 Chris Pietschmann</copyright>
-    <tags>hash location.hash javascript route querystring hashchange onhashchange location</tags>
+    <description>Allows you to work with 'location.hash' value in a similar fashion to a server-side query string. It also supports cross-browser "hashchange" event handling and a hash-based Routing engine. This is a stand-alone JavaScript library with zero other dependencies.</description>
+    <releaseNotes>https://github.com/crpietschmann/jHash</releaseNotes>
+    <copyright>Copyright (c) 2013-2023 Chris Pietschmann</copyright>
+    <tags>hash location.hash javascript route querystring hashchange onhashchange location URLSearchParams</tags>
   </metadata>
 </package>

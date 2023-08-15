@@ -1,1 +1,1 @@
-jsmin <jhash.js >jhash.min.js "jHash - http://jhash.codeplex.com - (c)2013 Chris Pietschmann"
+jsmin <jhash.js >jhash.min.js "jHash - https://github.com/crpietschmann/jHash - (c)2013-2023 Chris Pietschmann"
